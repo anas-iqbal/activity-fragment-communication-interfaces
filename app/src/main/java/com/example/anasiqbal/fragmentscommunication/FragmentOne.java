@@ -10,10 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
-public class FragmentOne extends Fragment implements MainActivity.sendDataToFrag {
+public class FragmentOne extends Fragment implements MainActivity.EventListener {
 
     TextView frag1text;
 
@@ -33,7 +30,7 @@ public class FragmentOne extends Fragment implements MainActivity.sendDataToFrag
     }
 
     @Override
-    public void passData() {
+    public void doSomething() {
         frag1text.setText("Activity Button Clicked");
     }
 }

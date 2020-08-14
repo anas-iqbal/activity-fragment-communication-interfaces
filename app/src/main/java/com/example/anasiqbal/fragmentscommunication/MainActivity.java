@@ -9,7 +9,7 @@ import android.widget.Button;
 
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity implements FragmentTwo.ClickInterface {
+public class MainActivity extends AppCompatActivity {
     Button activitybutton;
 
 
@@ -22,34 +22,22 @@ public class MainActivity extends AppCompatActivity implements FragmentTwo.Click
 
         ButterKnife.bind(this);
         final FragmentOne frag1=new FragmentOne();
-        FragmentTwo frag2=new FragmentTwo(this);
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.fl1,frag1);
         fragmentTransaction.commit();
-        FragmentManager fragmentManager2 = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction2 = fragmentManager2.beginTransaction();
-        fragmentTransaction2.replace(R.id.fl2,frag2);
-        fragmentTransaction2.commit();
 
         activitybutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                frag1.passData();
+                frag1.doSomething();
             }
         });
 
     }
-
-
-    @Override
-    public void frag2btnClicked() {
-        activitybutton.setText("Fragment2 Button Clicked");
-    }
-
-    interface sendDataToFrag
+    interface EventListener
     {
-         void passData();
+         void doSomething();
     }
 }

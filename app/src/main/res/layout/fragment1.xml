@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="318dp"
         android:layout_marginTop="230dp"
-        android:text="Fragment One"
+        android:text="Fragment"
         android:textSize="22sp"
         android:textColor="#ffff"
         app:layout_constraintBottom_toBottomOf="parent"
