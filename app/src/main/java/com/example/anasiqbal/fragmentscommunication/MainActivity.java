@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity implements FragmentTwo.Click
 
         ButterKnife.bind(this);
         final FragmentOne frag1=new FragmentOne();
-        FragmentTwo frag2=new FragmentTwo(this);
+        FragmentTwo frag2=new FragmentTwo();
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
